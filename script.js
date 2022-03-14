@@ -1,17 +1,24 @@
-const add = document.getElementById('add-btn');
-const text = document.getElementById('book-title');
-const entireList = document.getElementById('ul-container');
-const author = document.getElementById('book-author');
+const arrayOfObjects = [];
 
-add.addEventListener('click', (e) => {
-  if (text.value !== '' && author.value !== '') {
+function Object(title, author) {
+  this.title = title;
+  this.author = author;
+}
+
+const prevent = () => {
+  const form = document.querySelector('form');
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
+  });
+};
 
-    const list = document.createElement('li');
-    list.innerHTML = text.value;
-    const listAuthor = document.createElement('span');
-    listAuthor.innerHTML = author.value;
-    entireList.appendChild(list);
-    entireList.appendChild(listAuthor);
-  }
+prevent();
+
+const data = document.getElementById('send');
+
+data.addEventListener('click', () => {
+  const newTask = new Object();
+  newTask.title = document.getElementById('title').value;
+  newTask.author = document.getElementById('author').value;
+  arrayOfObjects.push(newTask);
 });
