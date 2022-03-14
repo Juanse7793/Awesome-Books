@@ -9,12 +9,19 @@
 <body>
     <main>
         <h1>Awesome Books</h1>
+
+        <div class="container">
+            <ul id="ul-container">
+            </ul>
+        </div>
+
+
         <form action="" class="form-container">
-            <input type="text" placeholder="Title" id="book-title">
+            <input type="text" placeholder="Title" id="book-title" required>
             <br>
-            <input type="text" placeholder="Author" id="book-author">
+            <input type="text" placeholder="Author" id="book-author" required>
             <br>
-            <button id="add-btn">Add</button>
+            <button type="submit" id="add-btn">Add</button>
         </form>
     </main>
 
