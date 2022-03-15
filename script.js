@@ -1,8 +1,8 @@
-const container = document.getElementById('ul-container');
+const bookList = document.getElementById('book-list');
 
-const arrayOfObjects = [];
+const BookArray = [];
 
-function Object(title, author) {
+function Book(title, author) {
   this.title = title;
   this.author = author;
 }
@@ -13,26 +13,23 @@ const prevent = () => {
     e.preventDefault();
   });
 };
-
 prevent();
 
 const data = document.getElementById('send');
 
 data.addEventListener('click', () => {
-  const newBook = new Object();
+  const newBook = new Book();
   newBook.title = document.getElementById('title').value;
   newBook.author = document.getElementById('author').value;
-  arrayOfObjects.push(newBook);
-  for (let i = 0; i < arrayOfObjects.length; i += 1) {
-    const list = `
-    <li>
-        <p>${arrayOfObjects[i].title}</p>
-        <br>
-        <p>${arrayOfObjects[i].author}</p>
-        <br>
-        <button id="remove">Remove</button>
-    </li>`;
-    container.innerHTML += list;
-    arrayOfObjects.splice(i, 1);
+  BookArray.push(newBook);
+  for (let i = 0; i < BookArray.length; i += 1) {
+    bookList.innerHTML += `
+    <li id='book-${i}'>
+        <p>${BookArray[i].title}</p>
+        <p>${BookArray[i].author}</p>
+        <button id="remove-${i}">Remove</button>
+    </li>`
+    BookArray.splice(i, 1);
   }
+  document.querySelector("form").reset();
 });
