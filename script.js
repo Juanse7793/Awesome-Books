@@ -1,18 +1,11 @@
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-    this.arrayOfObjects = [];
-  }
-}
-
+let arrayOfObjects = [];
 
 function lStorage() {
-  const convertToLocalStorage = JSON.stringify(arrayOfObjects);
-  localStorage.setItem('book', convertToLocalStorage);
+  const convLs = JSON.stringify(arrayOfObjects);
+  localStorage.setItem('book', convLs);
 }
 
-if (localStorage.book) {
+if (localStorage.book === true) {
   const local = JSON.parse(localStorage.book);
   arrayOfObjects = local;
 }
@@ -23,9 +16,9 @@ function addBook(title, author) {
     author,
   };
   arrayOfObjects.push(newBook1);
-
-  lStorage();
 }
+
+lStorage();
 
 function remove(title, author) {
   arrayOfObjects = arrayOfObjects.filter((book) => book.title !== title || book.author !== author);
@@ -47,10 +40,12 @@ function display() {
     const cdiv = document.createElement('div');
     const rmBtn = document.createElement('button');
     const read = `
-      <article id='book'>
+      <li id='book'>
           <p>${book.title}</p>
           <p>${book.author}</p>
-      </article>`;
+          <br>
+          <br>
+      </li>`;
 
     cdiv.innerHTML = read;
     cdiv.appendChild(rmBtn);
@@ -66,16 +61,19 @@ function display() {
 
 display();
 
-const book = document.getElementById('form');
-const bookElement = book.querySelectorAll('input');
+const newBook = document.getElementById('form');
+const bookElement = newBook.querySelectorAll('input');
 
-bookElement[2].addEventListener('click', (e) => {
+bookElement[2].addEventListener('click', () => {
   if (bookElement[0].value !== '' && bookElement[1].value !== '') {
     addBook(bookElement[0].value, bookElement[1].value);
     display();
     bookElement[0].value = '';
     bookElement[1].value = '';
-  } else {
-    e.preventDefault();
+  } else if (bookElement[0].value !== '') {
+    addBook(bookElement[0].value, 'Unknokwn Author');
+    display();
+    bookElement[0].value = '';
+    bookElement[1].value = '';
   }
 });
