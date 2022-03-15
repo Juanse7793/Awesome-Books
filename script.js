@@ -1,4 +1,11 @@
-let arrayOfObjects = [];
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+    this.arrayOfObjects = [];
+  }
+}
+
 
 function lStorage() {
   const convertToLocalStorage = JSON.stringify(arrayOfObjects);
@@ -43,8 +50,6 @@ function display() {
       <article id='book'>
           <p>${book.title}</p>
           <p>${book.author}</p>
-          <br>
-          <br>
       </article>`;
 
     cdiv.innerHTML = read;
