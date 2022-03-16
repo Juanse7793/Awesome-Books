@@ -1,28 +1,34 @@
-let arrayOfObjects = [];
+class MainBooks {
+  constructor() {
+    this.array = [];
+  }
 
-function lStorage() {
-  const convertToLocalStorage = JSON.stringify(arrayOfObjects);
-  localStorage.setItem('book', convertToLocalStorage);
+  lStorage() {
+    const convertToLocalStorage = JSON.stringify(this.array);
+    localStorage.setItem('book', convertToLocalStorage);
+  }
+
+  addBook(title, author) {
+    const newBook1 = {
+      title,
+      author,
+    };
+
+    this.array.push(newBook1);
+    this.lStorage();
+  }
+
+  remove(title, author) {
+    this.array = this.array.filter((book) => book.title !== title || book.author !== author);
+    this.lStorage();
+  }
 }
+
+const listOfBooks = new MainBooks();
 
 if (localStorage.book) {
   const local = JSON.parse(localStorage.book);
-  arrayOfObjects = local;
-}
-
-function addBook(title, author) {
-  const newBook1 = {
-    title,
-    author,
-  };
-  arrayOfObjects.push(newBook1);
-
-  lStorage();
-}
-
-function remove(title, author) {
-  arrayOfObjects = arrayOfObjects.filter((book) => book.title !== title || book.author !== author);
-  lStorage();
+  listOfBooks.array = local;
 }
 
 const container = document.getElementById('container');
@@ -36,25 +42,24 @@ function notDuplicate() {
 
 function display() {
   notDuplicate();
-  arrayOfObjects.forEach((book) => {
+  listOfBooks.array.forEach((book) => {
     const cdiv = document.createElement('div');
     const rmBtn = document.createElement('button');
     const read = `
       <article id='book'>
-          <p>${book.title}</p>
+          <p>"${book.title}"</p> by
           <p>${book.author}</p>
-          <br>
-          <br>
       </article>`;
 
     cdiv.innerHTML = read;
     cdiv.appendChild(rmBtn);
     container.appendChild(cdiv);
+    cdiv.classList.add('book-container');
 
     rmBtn.innerHTML = 'remove';
     rmBtn.addEventListener('click', () => {
       container.removeChild(cdiv);
-      return remove(book.title, book.author);
+      return listOfBooks.remove(book.title, book.author);
     });
   });
 }
@@ -66,7 +71,7 @@ const bookElement = book.querySelectorAll('input');
 
 bookElement[2].addEventListener('click', (e) => {
   if (bookElement[0].value !== '' && bookElement[1].value !== '') {
-    addBook(bookElement[0].value, bookElement[1].value);
+    listOfBooks.addBook(bookElement[0].value, bookElement[1].value);
     display();
     bookElement[0].value = '';
     bookElement[1].value = '';
