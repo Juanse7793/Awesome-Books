@@ -47,7 +47,7 @@ function display() {
     const rmBtn = document.createElement('button');
     const read = `
       <article id='book'>
-          <p>${book.title}</p> by
+          <p>"${book.title}"</p> by
           <p>${book.author}</p>
       </article>`;
 

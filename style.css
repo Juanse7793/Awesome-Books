@@ -6,6 +6,7 @@ body main #form {
 
 h1 {
   text-align: center;
+  font-family: 'Inter', sans-serif;
 }
 
 .book-container {
@@ -21,13 +22,21 @@ article {
 #container {
   margin: auto;
   border: 2px solid black;
-  width: 30vw;
+  width: 55vw;
 }
 
 #book > p {
   margin: 0 10px 0 10px;
 }
 
-article:nth-child(odd) {
+.book-container:nth-child(odd) {
   background-color: #f2f2f2;
+}
+p{
+  font-family: sans-serif;
+}
+
+button {
+  padding: 5px 5px;
+  margin: 2px;
 }
