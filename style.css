@@ -41,3 +41,55 @@ button {
   padding: 5px 5px;
   margin: 2px;
 }
+
+
+/* NAVBAR STYLING */
+
+#header {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#logo-div > * {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0 16px 0 16px;
+}
+
+.nav-list > * {
+  background-color: lightgray;
+  border: 1px solid black;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.nav-list > * > * {
+  color: black;
+  text-decoration: none;
+}
+
+#contact-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightgray;
+  color: black;
+  text-align: center;
+  padding: 10px;
+}
