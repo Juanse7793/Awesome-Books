@@ -1,4 +1,33 @@
-body {
-  margin: 0;
-  padding: 0;
+body main #form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.book-container {
+  display: flex;
+  justify-content: space-between
+}
+
+article {
+  display: flex;
+  align-items: center;
+}
+
+#container {
+  margin: auto;
+  border: 2px solid black;
+  width: 30vw;
+}
+
+#book > p {
+  margin: 0 10px 0 10px;
+}
+
+article:nth-child(odd) {
+  background-color: #f2f2f2;
 }

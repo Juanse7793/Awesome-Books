@@ -47,15 +47,14 @@ function display() {
     const rmBtn = document.createElement('button');
     const read = `
       <article id='book'>
-          <p>${book.title}</p>
+          <p>${book.title}</p> by
           <p>${book.author}</p>
-          <br>
-          <br>
       </article>`;
 
     cdiv.innerHTML = read;
     cdiv.appendChild(rmBtn);
     container.appendChild(cdiv);
+    cdiv.classList.add('book-container');
 
     rmBtn.innerHTML = 'remove';
     rmBtn.addEventListener('click', () => {
