@@ -18,16 +18,19 @@
 
 Use the following steps to run this Project locally:
 
-- open the terminal
+- Create a directory
 
-- get in the directory you want this folder to appear
+- Open the terminal
 
-- Run the command:
-`git clone git@github.com:Juanse7793/Portfolio.git `
+- Run this command:
+`git clone https://github.com/Juanse7793/Awesome-Books.git`
 
-- open the folder with a code editor (VS Code preferred)
+- Enter in to the folder:
+`cd Awesome-Books`
 
-- go to the index.html file and open it with live server
+- Open the folder with a code editor (VS Code preferred)
+
+- Go to the index.html file and open it with live server
 
 
 
