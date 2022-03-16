@@ -11,11 +11,26 @@
 
 
 ## Getting Started
-To get a local copy up and running follow these simple example steps.
 
-### Setup
-- Clone the Repo
-- Open on local Server
+**In this repository We created Awesome Books SPA.**
+
+## Run it
+
+Use the following steps to run this Project locally:
+
+- Create a directory
+
+- Open the terminal
+
+- Run this command:
+`git clone https://github.com/Juanse7793/Awesome-Books.git`
+
+- Enter in to the folder:
+`cd Awesome-Books`
+
+- Open the folder with a code editor (VS Code preferred)
+
+- Go to the index.html file and open it with live server
 
 
 
