@@ -30,8 +30,6 @@ GoToContact.addEventListener('click', () => {
   bookListSection.classList.remove('show');
 });
 
-
-
 class MainBooks {
   constructor() {
     this.array = [];
@@ -114,3 +112,5 @@ bookElement[2].addEventListener('click', (e) => {
   }
 });
 
+const dt = new Date();
+document.getElementById('date-time').innerHTML = dt;

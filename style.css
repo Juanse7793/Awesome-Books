@@ -53,6 +53,19 @@ button {
   font-size: 20px;
 }
 
+.nav-list > * {
+  background-color: lightgray;
+  border: 1px solid black;
+  font-weight: bold;
+  padding: 5px;
+  margin: 0 4px 5px 4px;
+}
+
+.nav-list > * > * {
+  color: black;
+  text-decoration: none;
+}
+
 #logo-div > * {
   text-decoration: none;
   color: black;
@@ -62,19 +75,6 @@ button {
   list-style: none;
   display: flex;
   margin: 0 16px 0 16px;
-}
-
-.nav-list > * {
-  background-color: lightgray;
-  border: 1px solid black;
-  font-weight: bold;
-  padding: 5px;
-  margin: 0 4px 0 4px;
-}
-
-.nav-list > * > * {
-  color: black;
-  text-decoration: none;
 }
 
 footer {
@@ -89,13 +89,12 @@ footer {
 }
 
 .all-books-cont {
-  display: block;
+  display: none;
 }
 
 .all-books-cont.show {
   display: block;
   margin: auto;
-  border: 2px solid black;
   width: 55vw;
 }
 
@@ -118,3 +117,8 @@ footer {
   display: block;
 }
 
+#date-time {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  margin-left: 60px;
+}
