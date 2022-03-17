@@ -41,3 +41,84 @@ button {
   padding: 5px 5px;
   margin: 2px;
 }
+
+/* NAVBAR STYLING */
+
+#header {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-list > * {
+  background-color: lightgray;
+  border: 1px solid black;
+  font-weight: bold;
+  padding: 5px;
+  margin: 0 4px 5px 4px;
+}
+
+.nav-list > * > * {
+  color: black;
+  text-decoration: none;
+}
+
+#logo-div > * {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0 16px 0 16px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightgray;
+  color: black;
+  text-align: center;
+  padding: 10px;
+}
+
+.all-books-cont {
+  display: none;
+}
+
+.all-books-cont.show {
+  display: block;
+  margin: auto;
+  width: 55vw;
+}
+
+.contact-cont {
+  display: none;
+}
+
+.contact-cont.show {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-book-cont {
+  display: none;
+}
+
+.add-book-cont.show {
+  display: block;
+}
+
+#date-time {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  margin-left: 60px;
+}
