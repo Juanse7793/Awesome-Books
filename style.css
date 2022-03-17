@@ -77,12 +77,6 @@ button {
   text-decoration: none;
 }
 
-#contact-cont {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 footer {
   position: fixed;
   left: 0;
@@ -93,3 +87,34 @@ footer {
   text-align: center;
   padding: 10px;
 }
+
+.all-books-cont {
+  display: block;
+}
+
+.all-books-cont.show {
+  display: block;
+  margin: auto;
+  border: 2px solid black;
+  width: 55vw;
+}
+
+.contact-cont {
+  display: none;
+}
+
+.contact-cont.show {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-book-cont {
+  display: none;
+}
+
+.add-book-cont.show {
+  display: block;
+}
+
